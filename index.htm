@@ -1,7 +1,314 @@
 <!DOCTYPE html>
-<html>
-    <h1>hello world</h1>
-    <h2>hello world</h2>
-    <h3>hello world, lorik här</h3>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voi - Mikromobilitet för alla</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #FF5E6C;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #FF5E6C 0%, #FF8A94 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: white;
+            color: #FF5E6C;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #FF5E6C;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            color: #FF5E6C;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .map-container {
+            background: #f8f8f8;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            height: 450px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #FF5E6C 0%, #FF8A94 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">Voi</a>
+            <ul class="nav-links">
+                <li><a href="#om">Om Voi</a></li>
+                <li><a href="#platser">Platser</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Åk smartare med Voi</h1>
+        <p>Hållbar mikromobilitet för alla i staden</p>
+        <a href="#" class="cta-button">Ladda ner appen</a>
+    </div>
+
+    <section id="om">
+        <h2>Om Voi Technology</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🛴 Vår Vision</h3>
+                <p>Voi strävar efter att skapa städer som är gjorda för att leva i, inte bara överleva i. Vi erbjuder hållbara mikromobilitslösningar som minskar bilberoendet och gör städer grönare.</p>
+            </div>
+            <div class="info-card">
+                <h3>🌍 Hållbarhet</h3>
+                <p>Med elscootrar och elcyklar erbjuder vi ett miljövänligt alternativ för korta resor. Vi arbetar aktivt för att minska vårt klimatavtryck och främja grönare städer.</p>
+            </div>
+            <div class="info-card">
+                <h3>🚀 Innovation</h3>
+                <p>Voi grundades 2018 och har snabbt växt till en av Europas ledande mikromobilitetsföretag. Vi använder den senaste tekniken för att göra resor enkla, säkra och tillgängliga.</p>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Enkel att använda</h3>
+                <p>Skanna QR-koden och åk iväg på sekunder</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💳</div>
+                <h3>Flexibel betalning</h3>
+                <p>Betala per resa eller välj ett månadspass</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Säker åkning</h3>
+                <p>GPS-spårning och säkerhetsfunktioner</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="platser">
+        <h2>Adress</h2>
+        <div class="contact-info">
+            <h3>Voi Technology AB</h3>
+            <p><strong>Adress:</strong> Sveavägen 56, 111 34 Stockholm</p>
+            <p><strong>E-post:</strong> hello@voiapp.io</p>
+            <p><strong>Webb:</strong> www.voi.com</p>
+        </div>
+    </section>
+
+    <section id="support">
+        <h2>Support & Hjälp</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>📱 Kundtjänst</h3>
+                <p>Vår kundtjänst är tillgänglig dygnet runt via appen. Klicka på hjälp-ikonen för att chatta med oss eller hitta svar på vanliga frågor.</p>
+            </div>
+            <div class="info-card">
+                <h3>❓ Vanliga frågor</h3>
+                <p>Hur parkerar jag? Vad kostar det? Hur fungerar appen? Besök vår FAQ-sida för svar på de vanligaste frågorna.</p>
+            </div>
+            <div class="info-card">
+                <h3>🛡️ Säkerhet</h3>
+                <p>Använd alltid hjälm, följ trafikreglerna och parkera ansvarsfullt. Läs våra säkerhetsriktlinjer för en trygg åkning.</p>
+            </div>
+            <div class="info-card">
+                <h3>🎓 Kom igång</h3>
+                <p>Första gången? Ladda ner appen, skapa ett konto, hitta en scooter i närheten och skanna QR-koden. Så enkelt är det!</p>
+            </div>
+            <div class="info-card">
+                <h3>💰 Priser</h3>
+                <p>Upplåsningsavgift + minutpris. Priser varierar beroende på stad. Kolla i appen för aktuella priser och erbjudanden.</p>
+            </div>
+            <div class="info-card">
+                <h3>🔧 Rapportera problem</h3>
+                <p>Hittat en trasig scooter? Rapportera direkt i appen så åtgärdar vi problemet så snabbt som möjligt.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Voi Technology AB. Alla rättigheter förbehållna.</p>
+        <p>Åk säkert, åk hållbart, åk Voi! 🛴</p>
+    </footer>
+</body>
 </html>
